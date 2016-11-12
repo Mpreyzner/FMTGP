@@ -45,3 +45,16 @@ function egyptianMultiplication($a, $n) {
 	}
 	return $a;
 }
+
+function egyptianMultiplicationRecursive($number, $multiplier) {
+	if ($multiplier == 1) {
+		return $number;
+	}
+
+	$result = egyptianMultiplicationRecursive($number + $number, floor($multiplier / 2));
+	if ($multiplier % 2) {
+		$result += $number;
+	}
+	return $result;
+
+}
